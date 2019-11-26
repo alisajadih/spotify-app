@@ -21,7 +21,7 @@ export const PlaylistUi = styled.div`
 //playlist info ------------------------
 
 const PlaylistInfo = styled.div`
-  width: 35%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -121,6 +121,40 @@ const PlaylistNewReleaseButton = styled(Link)`
     cursor: pointer;
   }
 `;
+//PlayList Tracks (Not Empty)
+
+const PlayListTracksContainer = styled.div`
+  width: 70%;
+`;
+
+const PlayListTracksUl = styled.ul`
+  list-style-type: none;
+`;
+const PlayListTracksLi = styled.li`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding:5px 10px;
+  border-radius:5px ;
+  margin-bottom: 18px;
+  transition : all .2s;
+  background-color:transparent;
+  &:hover {
+    background-color : #6d6d6d;
+  }
+`;
+const PlaylistTracksLiHeader = styled.h6`
+  color: white;
+  margin-bottom: 5px;
+  font-size: 14px;
+`;
+const PlaylistTracksLiP = styled.p`
+  color: #c1c1c1;
+`;
+const PlaylistTracksDuration = styled.p`
+  color: #c1c1c1;
+`;
+
 //Recommended List ...
 const PlaylistRecomendedContainer = styled.div`
   width: 100%;
@@ -129,7 +163,7 @@ const PlaylistRecomendedContainer = styled.div`
   justify-content: flex-end;
 `;
 const PlaylistRecomended = styled.div`
-  width: 75%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -351,6 +385,37 @@ PlaylistUi.Recommended = ({
         {/* ) : null} */}
       </PlaylistRecomended>
     </PlaylistRecomendedContainer>
+  );
+};
+
+PlaylistUi.Tracks = ({tracks =[]}) => {
+  const  millisToMinutesAndSeconds = (millis) => {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+  }
+  return (
+    <PlayListTracksContainer>
+      <PlayListTracksUl>
+        {tracks.map(track => (
+          <PlayListTracksLi>
+            <div>
+              <PlaylistTracksLiHeader>
+                {track.track.name}
+              </PlaylistTracksLiHeader>
+              <PlaylistTracksLiP>
+                {track.track.album.name} . {track.track.artists[0].name}
+              </PlaylistTracksLiP>
+            </div>
+            <div>
+              <PlaylistTracksDuration >
+                {millisToMinutesAndSeconds(track.track.duration_ms)}
+              </PlaylistTracksDuration>
+            </div>
+          </PlayListTracksLi>
+        )) || []}
+      </PlayListTracksUl>
+    </PlayListTracksContainer>
   );
 };
 

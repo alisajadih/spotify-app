@@ -101,32 +101,36 @@ const Playlist = props => {
         background: #0a0a0a;
       `}
     >
-      <>
-        <PlaylistUi>
-          <PlaylistUi.Info
-            header={currentPlaylist.name}
-            username={user.display_name}
-            handleDelete={handleShow}
+      {Object.entries(currentPlaylist).length !== 0 ? (
+        <>
+          <PlaylistUi>
+            <PlaylistUi.Info
+              header={currentPlaylist.name}
+              username={user.display_name}
+              handleDelete={handleShow}
+            />
+            {currentPlaylist.tracks.items.length === 0 ? (
+              <PlaylistUi.Empty />
+            ) : (
+              <PlaylistUi.Tracks
+                tracks={currentPlaylist.tracks.items}
+              />
+            )}
+            <PlaylistUi.Recommended
+              handleShowRecommended={handleShowRecommended}
+              showRecommended={showRecommended}
+              loadRecommended={loadRecommended}
+              recommendedList={recommendedList}
+              addTrackToPlaylist={addTrackToPlaylist}
+            />
+          </PlaylistUi>
+          <PlayListDeleteModal
+            show={showModal}
+            handleShow={handleShow}
+            playlistId={playlistId}
           />
-          {(!currentPlaylist && currentPlaylist.tracks.items.length === 0) ? (
-            <PlaylistUi.Empty />
-          ) : null
-          // <PlaylistUi.Tracks />
-          }
-          <PlaylistUi.Recommended
-            handleShowRecommended={handleShowRecommended}
-            showRecommended={showRecommended}
-            loadRecommended={loadRecommended}
-            recommendedList={recommendedList}
-            addTrackToPlaylist={addTrackToPlaylist}
-          />
-        </PlaylistUi>
-        <PlayListDeleteModal
-          show={showModal}
-          handleShow={handleShow}
-          playlistId={playlistId}
-        />
-      </>
+        </>
+      ) : null}
     </div>
   );
 };
