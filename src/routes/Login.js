@@ -14,7 +14,7 @@ const MainDiv = styled.div`
 //rgb(8, 6, 107,0.35)
 const FormSection = styled.div`
   width: 30%;
-  height: 500px;
+  height: 200px;
   background: rgb(0, 0, 30, 0.4);
   border-radius: 10px;
   text-align: center;
@@ -30,19 +30,19 @@ const FormHeader = styled.h1`
   font-weight: 700;
   letter-spacing: 2px;
 `;
-const Line = styled.span`
-  display: inline-block;
-  width: 80%;
-  background-color: #515151;
-  border: 1px solid #515151;
-`;
+// const Line = styled.span`
+//   display: inline-block;
+//   width: 80%;
+//   background-color: #515151;
+//   border: 1px solid #515151;
+// `;
 const SpotLogin = styled.a`
-  padding: 5px 60px;
+  padding: 10px 60px;
   border: 4px solid #f5f5f5;
   border-radius: 25px;
   background-color: #121212;
   color: #f5f5f5;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -67,7 +67,7 @@ const Login = props => {
     <MainDiv>
       <FormSection>
         <FormHeader>Log In</FormHeader>
-        <Line />
+        {/* <Line /> */}
         <SpotLogin
           href={`https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=http://localhost:3000/callback/&scope=playlist-modify-public playlist-read-collaborative`}
         >

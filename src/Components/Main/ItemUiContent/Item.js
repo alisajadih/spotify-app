@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { rgba } from "style-value-types";
 
 const CardItem = styled.div`
-  width: 200px;
+  width:200px;
   height: 200px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 10px 5px;
+  margin: 10px 20px;
 `;
 const CardImage = styled.div`
   width: 100%;

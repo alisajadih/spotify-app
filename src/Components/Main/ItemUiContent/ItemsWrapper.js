@@ -5,12 +5,12 @@ import styled from "styled-components";
 const Wapper = styled.div`
   width: 100%;
   display: flex;
-  height: 100%;
+  /* height: 100%; */
   align-content: space-between;
   margin:0 auto;
   margin-bottom:50px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   
   
 `;

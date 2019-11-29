@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useUserValue } from "../Context";
 import AuthUtils from "../utils/AuthUtils";
 const User = styled.div`
-  background: url(${backGround});
+  background:#0A0A0A;
   height: 100%;
   background-size: cover;
   display: flex;
