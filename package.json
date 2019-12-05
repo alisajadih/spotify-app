@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "debounce": "^1.2.0",
+    "express": "^4.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-pose": "^4.0.8",
@@ -17,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "netlify deploy"
   },
   "eslintConfig": {
     "extends": "react-app"

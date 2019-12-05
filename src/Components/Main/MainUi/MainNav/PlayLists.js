@@ -62,9 +62,9 @@ const PlayListLiLink = styled(NavLink).attrs(props => {
   }
 `;
 
-const PlayLists = ({ Logo, playlists = [] ,handleShow}) => {
+const PlayLists = ({ Logo, playlists = [], handleShow }) => {
   const handleModal = () => {
-    handleShow(CREATE)
+    handleShow(CREATE);
   };
 
   return (

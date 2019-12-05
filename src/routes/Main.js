@@ -33,7 +33,7 @@ import { CREATE } from "../Context/modalTypes";
 
 const MainPage = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: Grid;
   grid-template-areas:
     /* "nav menu" */
@@ -43,6 +43,10 @@ const MainPage = styled.div`
   grid-template-rows: 1fr 10%;
   grid-template-columns: 15% 1fr;
   position: relative;
+
+  @media (max-width: 575.98px){
+    grid-template-columns : 30% 1fr;
+  }
 `;
 
 //Logos

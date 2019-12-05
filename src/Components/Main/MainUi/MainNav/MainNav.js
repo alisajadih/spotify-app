@@ -31,15 +31,22 @@ const NavbarUl = styled.ul`
   flex-direction: column;
   color: white;
   list-style-type: none;
-  font-size: 20px;
+  font-size: 1rem;
   margin-top: 20px;
-  font-weight: 700;
+  font-weight: 500;
+  @media (max-width: 575.98px) {
+    font-size: 0.6rem;
+    margin-top: 10px;
+  }
 `;
 const NavbarLi = styled.li``;
 const NavbarLiLink = styled(NavLink).attrs(props => ({
   activeClassName
 }))`
   padding: 10px 20px;
+  @media (max-width: 575.98px) {
+    padding: 5px 10px;
+  }
   display: flex;
   justify-content: start;
   align-items: center;
@@ -71,6 +78,9 @@ const NavbarLiLink = styled(NavLink).attrs(props => ({
 `;
 const NavbarLiP = styled.p`
   padding-left: 20px;
+  @media (max-width: 575.98px) {
+    padding-left: 5px;
+  }
 `;
 //Login
 const DivA = styled.div`
@@ -82,12 +92,12 @@ const DivA = styled.div`
 `;
 const Login = styled(Link)`
   padding: 5px 40px;
-  border: 4px solid #f5f5f5;
+  border: 2px solid #f5f5f5;
   border-radius: 25px;
   background-color: #121212;
   color: #f5f5f5;
-  font-weight: 700;
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0 20px;
@@ -95,6 +105,10 @@ const Login = styled(Link)`
   &:hover {
     cursor: pointer;
     background-color: #272727;
+  }
+  @media (max-width: 575.98px) {
+    font-size: 0.5rem;
+    font-weight: 500;
   }
   @media (max-width: 1190px) {
     padding: 5px 20px;
@@ -132,11 +146,23 @@ const UserInfo = styled(NavLink).attrs(props => {
     /* background-color:white; */
   }
 `;
+const UserInfoP = styled.p`
+  font-size: 1rem;
+  font-weight: 300;
+  text-decoration: none;
+  @media (max-width: 575.98px) {
+    font-size : .5rem
+  }
 
+`;
 
 const UserLogo = styled(UserSvg)`
   width: 35px;
   height: 35px;
+  @media (max-width: 575.98px) {
+    width: 20px;
+    height:20px;
+  }
 `;
 
 MainNav.MainLogo = ({ Logo }) => (
@@ -166,7 +192,7 @@ MainNav.Info = ({ avatar, name }) => {
         {avatar ? <img src={avatar} alt="user" /> : <UserLogo />}
         <p
           style={{
-            fontSize: "18px",
+            fontSize: "1rem",
             fontWeight: 300,
             textDecoration: "none"
           }}
@@ -178,8 +204,12 @@ MainNav.Info = ({ avatar, name }) => {
   );
 };
 
-MainNav.PlayList = ({ Logo ,playlists,handleShow}) => (
-  <PlayLists Logo={Logo} playlists={playlists} handleShow={handleShow}/>
+MainNav.PlayList = ({ Logo, playlists, handleShow }) => (
+  <PlayLists
+    Logo={Logo}
+    playlists={playlists}
+    handleShow={handleShow}
+  />
 );
 
 export default MainNav;

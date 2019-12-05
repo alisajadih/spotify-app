@@ -3,7 +3,7 @@ import styled from "styled-components";
 import background from "../backgrounds/LoginBackground.jpg";
 
 const MainDiv = styled.div`
-  background: url(${background});
+  background: #111111;
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -15,7 +15,7 @@ const MainDiv = styled.div`
 const FormSection = styled.div`
   width: 30%;
   height: 200px;
-  background: rgb(0, 0, 30, 0.4);
+  background: rgb(30, 30, 30, 0.3);
   border-radius: 10px;
   text-align: center;
   padding: 20px 30px;
@@ -69,7 +69,7 @@ const Login = props => {
         <FormHeader>Log In</FormHeader>
         {/* <Line /> */}
         <SpotLogin
-          href={`https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=http://localhost:3000/callback/&scope=playlist-modify-public playlist-read-collaborative`}
+          href={`https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=https://alotify.netlify.com/callback/&scope=playlist-modify-public playlist-read-collaborative`}
         >
           Login With Spotify
         </SpotLogin>
